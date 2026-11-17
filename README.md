@@ -17,4 +17,3 @@ El prototipo incluye acceso, recuperación de contraseña y registro con validac
 - Interfaz visual conceptual interactiva: [`docs/practica-login-material.html`](docs/practica-login-material.html)
 
 Antes de entregar, agrega capturas reales del emulador a `docs/capturas/`, sube este proyecto a un repositorio público de GitHub y registra el enlace en la sección correcta de la hoja de Google Sheets del grupo.
-

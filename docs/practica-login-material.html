@@ -1,0 +1,59 @@
+<div id="login-practice" aria-label="Práctica de interfaz móvil: acceso">
+  <style>
+    #login-practice { color: var(--foreground); font-family: Inter, ui-sans-serif, system-ui, sans-serif; }
+    #login-practice * { box-sizing: border-box; }
+    #login-practice .intro { display:flex; justify-content:space-between; align-items:flex-start; gap:16px; margin-bottom:18px; }
+    #login-practice h1 { font-size:24px; line-height:1.2; font-weight:500; margin:0 0 5px; }
+    #login-practice .sub { color:var(--muted-foreground); font-size:14px; }
+    #login-practice .deadline { white-space:nowrap; border-radius:999px; padding:7px 11px; background:var(--muted); font-size:12px; }
+    #login-practice .nav { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:20px; }
+    #login-practice .nav-link { border:0; border-radius:999px; padding:8px 13px; background:transparent; color:var(--muted-foreground); font:500 13px inherit; cursor:pointer; }
+    #login-practice .nav-link.active { background:var(--primary); color:var(--primary-foreground); }
+    #login-practice [role=tabpanel] { padding:4px 0 8px; }
+    #login-practice h2 { font-size:17px; font-weight:500; margin:0 0 8px; }
+    #login-practice p { font-size:14px; line-height:1.55; margin:0; }
+    #login-practice .cols { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px; }
+    #login-practice .stack { display:grid; gap:20px; }
+    #login-practice .eyebrow { color:var(--muted-foreground); font-size:11px; letter-spacing:.1em; text-transform:uppercase; margin-bottom:7px; }
+    #login-practice ul { margin:7px 0 0; padding-left:18px; font-size:14px; line-height:1.65; }
+    #login-practice .flow { display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin-top:12px; }
+    #login-practice .node { border-radius:12px; background:var(--muted); padding:9px 12px; font-size:13px; }
+    #login-practice .arrow { color:var(--muted-foreground); }
+    #login-practice .canvas { min-height:400px; border-radius:22px; padding:24px; background:light-dark(#f0eef7,#24232b); display:flex; align-items:center; justify-content:center; }
+    #login-practice .phone { width:270px; border:7px solid #292832; border-radius:34px; padding:14px 17px 19px; background:#fbf8ff; color:#201b2b; box-shadow:0 16px 40px #15121f38; }
+    #login-practice .notch { width:70px; height:6px; border-radius:9px; background:#292832; margin:0 auto 16px; }
+    #login-practice .status { display:flex; justify-content:space-between; font-size:10px; font-weight:600; margin-bottom:27px; }
+    #login-practice .phone h3 { font-size:23px; line-height:1.15; font-weight:600; margin:0 0 7px; }
+    #login-practice .phone .desc { color:#625d6b; font-size:12px; margin-bottom:20px; }
+    #login-practice .field-label { font-size:11px; font-weight:600; margin:11px 0 5px; }
+    #login-practice .field { height:43px; border:1px solid #797582; border-radius:12px; display:flex; align-items:center; padding:0 11px; color:#625d6b; font-size:12px; background:#fff; }
+    #login-practice .forgot { text-align:right; color:#6750a4; font-size:10px; margin:8px 0 14px; }
+    #login-practice .submit { border:0; border-radius:999px; width:100%; height:44px; background:#6750a4; color:white; font-weight:600; font-size:13px; }
+    #login-practice .signup { text-align:center; font-size:11px; margin-top:18px; color:#625d6b; }
+    #login-practice .signup b { color:#6750a4; }
+    #login-practice .frame { width:min(100%,360px); background:#fbf8ff; color:#201b2b; border:1px solid #d9d5df; border-radius:20px; padding:24px; }
+    #login-practice .frame .line { height:34px; border:1px dashed #8b8793; border-radius:8px; margin:8px 0; display:flex; align-items:center; padding:0 10px; color:#625d6b; font-size:12px; }
+    #login-practice .frame .block { height:42px; border:1px dashed #8b8793; border-radius:9px; margin:8px 0 14px; }
+    #login-practice .sketch { width:min(100%,370px); transform:rotate(-1deg); padding:24px; border:1px solid #d4d0c9; background:#fffef9; color:#37342f; box-shadow:5px 7px 0 #d9d5cb; }
+    #login-practice .sketch h3 { font:600 23px Georgia,serif; margin:0 0 8px; }
+    #login-practice .sketch .scribble { border:1px solid #6c675e; border-radius:8px; padding:10px; margin:9px 0; font:13px Georgia,serif; }
+    #login-practice .swatch { display:inline-block; width:13px; height:13px; border-radius:4px; background:#6750a4; vertical-align:-2px; margin-right:5px; }
+    @media(max-width:600px) { #login-practice .cols { grid-template-columns:1fr; } #login-practice .intro { display:block; } #login-practice .deadline { display:inline-block; margin-top:10px; } #login-practice .canvas { min-height:360px; padding:16px; } }
+  </style>
+  <div class="intro"><div><h1>Acceso · Material 3</h1><div class="sub">Práctica de interfaces móviles · Concepto visual y arquitectura</div></div><div class="deadline">Entrega · 17 noviembre</div></div>
+  <div class="nav nav-pills" role="tablist" aria-label="Etapas del diseño">
+    <button class="nav-link active" id="research" role="tab" aria-controls="research-panel" aria-selected="true" type="button">Investigación</button>
+    <button class="nav-link" id="sketch" role="tab" aria-controls="sketch-panel" aria-selected="false" type="button">Boceto</button>
+    <button class="nav-link" id="wireframe" role="tab" aria-controls="wireframe-panel" aria-selected="false" type="button">Wireframe</button>
+    <button class="nav-link" id="mockup" role="tab" aria-controls="mockup-panel" aria-selected="false" type="button">Mockup</button>
+  </div>
+  <section id="research-panel" role="tabpanel" aria-labelledby="research">
+    <div class="cols">
+      <div class="stack"><div><div class="eyebrow">Investigación</div><h2>Objetivo y usuarios</h2><p>Diseñar un acceso móvil claro para personas que necesitan entrar rápidamente, recuperar su cuenta y crear una cuenta nueva sin confusión.</p><ul><li>Priorizar legibilidad y una acción principal.</li><li>Usar etiquetas persistentes y estados visibles.</li><li>Dar acceso directo a recuperación y registro.</li></ul></div><div><div class="eyebrow">Material You</div><h2>Dirección visual</h2><p><span class="swatch"></span>Paleta violeta dinámica, superficies suaves, esquinas amplias y componentes accesibles inspirados en Material 3.</p></div></div>
+      <div><div class="eyebrow">Arquitectura</div><h2>Flujo de la pantalla</h2><div class="flow"><span class="node">Login</span><span class="arrow">→</span><span class="node">Validar campos</span><span class="arrow">→</span><span class="node">Inicio</span></div><div class="flow"><span class="node">¿Olvidaste contraseña?</span><span class="arrow">→</span><span class="node">Recuperación</span></div><div class="flow"><span class="node">Crear cuenta</span><span class="arrow">→</span><span class="node">Registro</span></div><p style="margin-top:18px"><b>Componentes:</b> encabezado de bienvenida, correo, contraseña, recuperación, botón principal y enlace de registro.</p></div>
+    </div>
+  </section>
+  <section id="sketch-panel" role="tabpanel" aria-labelledby="sketch" hidden><div class="cols"><div><div class="eyebrow">Boceto · baja fidelidad</div><h2>Jerarquía inicial</h2><p>Orden de lectura de arriba hacia abajo; acciones secundarias visibles junto al formulario.</p></div><div class="canvas"><div class="sketch"><div style="font-size:11px">9:41　　●●●</div><h3 style="margin-top:26px">¡Hola de nuevo!</h3><p style="font:14px Georgia,serif">Inicia sesión para continuar</p><div class="scribble">Correo electrónico</div><div class="scribble">Contraseña　　　 ◉</div><div style="text-align:right;font:12px Georgia,serif">¿Olvidaste tu contraseña?</div><div class="scribble" style="text-align:center;background:#eee9f5">Iniciar sesión</div><div style="text-align:center;font:12px Georgia,serif">¿No tienes cuenta? Regístrate</div></div></div></div></section>
+  <section id="wireframe-panel" role="tabpanel" aria-labelledby="wireframe" hidden><div class="cols"><div><div class="eyebrow">Wireframe · estructura</div><h2>Distribución y componentes</h2><ul><li>Zona superior: barra de estado.</li><li>Contenido central: título, apoyo y dos campos.</li><li>Acciones: recuperar, iniciar sesión y registrarse.</li><li>Diseño adaptable y objetivo táctil amplio.</li></ul></div><div class="canvas"><div class="frame"><div style="font-size:11px;color:#625d6b">9:41　　　　　　　　 ●●●</div><div style="font-size:18px;font-weight:600;margin-top:22px">¡Hola de nuevo!</div><div style="font-size:12px;color:#625d6b;margin:5px 0 16px">Inicia sesión para continuar</div><div class="line">Correo electrónico</div><div class="line">Contraseña</div><div style="text-align:right;font-size:11px;color:#6750a4;margin:8px 0">¿Olvidaste tu contraseña?</div><div class="block" style="height:42px;background:#6750a4;border:0;border-radius:22px"></div><div style="text-align:center;font-size:11px">¿No tienes cuenta? <b style="color:#6750a4">Regístrate</b></div></div></div></div></section>
+  <section id="mockup-panel" role="tabpanel" aria-labelledby="mockup" hidden><div class="cols"><div><div class="eyebrow">Mockup · Material 3</div><h2>Propuesta de interfaz</h2><p>Campos con etiqueta, botón de alto contraste y rutas de ayuda a la vista. El color de acento representa el tema dinámico de Material You.</p><ul><li>Tipografía y contraste para lectura móvil.</li><li>Controles redondeados con áreas cómodas al tacto.</li><li>Estados y validaciones listos para prototipar en Android Studio.</li></ul></div><div class="canvas"><div class="phone"><div class="notch"></div><div class="status"><span>9:41</span><span>●●●　▰</span></div><h3>¡Hola de nuevo!</h3><div class="desc">Inicia sesión para continuar</div><div class="field-label">Correo electrónico</div><div class="field">nombre@correo.com</div><div class="field-label">Contraseña</div><div class="field">••••••••••　　　 ◉</div><div class="forgot">¿Olvidaste tu contraseña?</div><button class="submit" type="button">Iniciar sesión</button><div class="signup">¿No tienes cuenta? <b>Regístrate</b></div></div></div></div></section>
+</div>
